@@ -1,0 +1,18 @@
+<div id="lista">
+    <h2>Lista de Facultades</h2>
+    <div>
+        <ul>
+            <li *ngFor="let facu of listaFacu" 
+            [ngClass] ="{seleccionada: seleccion==facu}"
+            (click)="seleccionar(facu)" >{{facu.nombre}}</li>
+        </ul>
+    </div>
+<p>La Complutense tiene {{listaFacu.length}} facultades</p>
+</div>
+
+<div id="facultad"><facultad *ngIf="seleccion" [facultad]="seleccion"></facultad>
+    <button *ngIf="seleccion" (click)="cerrar()">Cerrar</button>    
+</div>
+
+
+
